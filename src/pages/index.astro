@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/landing/Header.astro";
+import Content from "../components/landing/Content.astro";
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+  title="Niloy"
+  description="portfolio"
+/>
+<BaseLayout>
+  <Header />
+  <Content />
+</BaseLayout>

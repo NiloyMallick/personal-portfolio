@@ -1,0 +1,135 @@
+---
+import { details } from "../../data/details.json";
+import { contact } from "../../data/contact.json";
+import { projects } from "../../data/project.json";
+import { skills } from "../../data/skills.json";
+---
+
+<section>
+  <div class="mx-auto max-w-7xl px-8 py-12">
+    <div class="mx-auto max-w-xl">
+      <div class="grid gap-10 md:gap-10">
+        <div class="text-sm font-light">
+          <p class="text-black dark:text-white">Work experience</p>
+
+          <div class="grid gap-6 mt-3">
+            <!-- Work experience details -->
+            {
+              details.map((template) => (
+                <>
+                  <div class="text-neutral-500  items-start grid grid-cols-1 md:grid-cols-3">
+                    <div>
+                      <p class="text-neutral-400 dark:text-neutral-400">{template.date}</p>
+                    </div>
+                    <div class="md:col-span-2 w-full">
+                      <p class="text-black dark:text-white">
+                        <a
+                          href={template.link}
+                          class="underline hover:no-underline duration-200 after:content-['_↗']">
+                          {template.title}
+                        </a>
+                      </p>
+                      <p class="pt-1.5">{template.location}</p>
+                      <p class="pt-3">{template.details}</p>
+                    </div>
+                  </div>
+                </>
+              ))
+            }
+          </div>
+        </div>
+        
+        <!-- Add spacing between sections -->
+        <div class="my-4"></div>
+        
+        <div class="text-sm font-light">
+          <p class="text-black dark:text-white">Projects</p>
+
+          <div class="grid gap-6 mt-3">
+            <!-- Project details -->
+            {
+              projects.map((template) => (
+                <>
+                  <div class="text-neutral-500  items-start grid grid-cols-1 md:grid-cols-3">
+                    <div>
+                      <p class="text-neutral-400 dark:text-neutral-400">{template.title}</p>
+                    </div>
+                    <div class="md:col-span-2 w-full">
+                      <p class="text-black dark:text-white">
+                        <a
+                          href={template.link}
+                          class="underline hover:no-underline duration-200 after:content-['_↗']">
+                          GITHUB
+                          
+                        </a>
+                      </p>
+                      <p>{template.details}</p>
+                    </div>
+                  </div>
+                </>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Add spacing between sections -->
+        <div class="my-4"></div>
+        
+        <div class="text-sm font-light">
+          <p class="text-black dark:text-white">Skills</p>
+
+          <div class="grid gap-6 mt-3">
+            <!-- Skills details -->
+            {
+              skills.map((template) => (
+                <>
+                  <div class="text-neutral-500  items-start grid grid-cols-1 md:grid-cols-3">
+                    <div>
+                      <p class="text-neutral-400 dark:text-neutral-400">{template.title}</p>
+                    </div>
+                    <div class="md:col-span-2 w-full">
+                      <p class="text-black dark:text-white">{template.name}</p>
+                      <p>{template.details}</p>
+                    </div>
+                  </div>
+                </>
+              ))
+            }
+          </div>
+        </div>
+
+                <!-- Add spacing between sections -->
+                <div class="my-4"></div>
+        
+                <div class="text-sm font-light">
+                  <p class="text-black dark:text-white">Contact</p>
+        
+                  <div class="grid gap-6 mt-3">
+                    <!-- Contact details -->
+                    {
+                      contact.map((template) => (
+                        <>
+                          <div class="text-neutral-500  items-start grid grid-cols-1 md:grid-cols-3">
+                            <div>
+                              <p class="text-neutral-400 dark:text-neutral-400">{template.type}</p>
+                            </div>
+                            <div class="md:col-span-2 w-full">
+                              <p class="text-black dark:text-white">
+                                <a
+                                  href={template.link}
+                                  title={template.type}
+                                  class="underline hover:no-underline duration-200 after:content-['_↗']">
+                                  {template.title}
+                                </a>
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      ))
+                    }
+                  </div>
+                </div>
+      </div>
+    </div>
+  </div>
+</section>
